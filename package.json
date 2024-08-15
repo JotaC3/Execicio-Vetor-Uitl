@@ -1,0 +1,15 @@
+{
+  "name": "vetor-util",
+  "version": "1.0.0",
+  "description": "exercicio feito na aula no dia 15-08",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest",
+    "test-coverage": "jest --coverage"
+  },
+  "author": "Joao Carlos Costa Carvalho",
+  "license": "ISC",
+  "devDependencies": {
+    "jest": "^29.7.0"
+  }
+}
