@@ -16,8 +16,8 @@ function copia(a, b) {
     return b;
 }
 
-copia([1, 2], [3, 4])
-
+/* copia([1, 2], [3, 4])
+ */
 // copia b invertido
 function inverso(a, b) {
     contadorA = 0
@@ -36,8 +36,8 @@ function inverso(a, b) {
     console.log(b);
     return b;
 }
-inverso([4,5,6], [1,2,3]);
-
+/* inverso([4,5,6], [1,2,3]);
+ */
 
 module.exports = {
     copia,
