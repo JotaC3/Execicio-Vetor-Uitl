@@ -1,4 +1,3 @@
-// copiar a para b
 function copia(a, b) {
     bPosition = 0
 
@@ -16,9 +15,7 @@ function copia(a, b) {
     return b;
 }
 
-/* copia([1, 2], [3, 4])
- */
-// copia b invertido
+
 function inverso(a, b) {
     contadorA = 0
     bPosition = a.length -1
@@ -36,10 +33,51 @@ function inverso(a, b) {
     console.log(b);
     return b;
 }
-/* inverso([4,5,6], [1,2,3]);
- */
+
+
+function somarVetores(a, b) {
+    const tamanhoMax = Math.max(a.length, b.length);
+    const resultado = new Array(tamanhoMax);
+
+    for (let i = 0; i < tamanhoMax; i++) {
+        const valorA = a[i] !== undefined ? a[i] : 0;
+        const valorB = b[i] !== undefined ? b[i] : 0;
+
+        if (Array.isArray(valorA) && Array.isArray(valorB)) {
+            resultado[i] = somarVetores(valorA, valorB); 
+        } else if (Array.isArray(valorA)) {
+            resultado[i] = somarVetores(valorA, [valorB]); 
+        } else if (Array.isArray(valorB)) {
+            resultado[i] = somarVetores([valorA], valorB); 
+        } else {
+            resultado[i] = valorA + valorB; 
+        }
+    }
+
+    return resultado;
+}
+
+function intercalarElementos(a, b) {
+    const tamanhoMax = a.length + b.length;
+    const resultado = new Array(tamanhoMax).fill(0);
+    
+    let posA = 0, posB = 0, posRes = 0;
+    
+    while (posA < a.length || posB < b.length) {
+        if (posA < a.length) {
+            resultado[posRes++] = a[posA++];
+        }
+        if (posB < b.length) {
+            resultado[posRes++] = b[posB++];
+        }
+    }
+
+    return resultado;
+}
 
 module.exports = {
     copia,
-    inverso
+    inverso,
+    somarVetores,
+    intercalarElementos
 }

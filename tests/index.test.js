@@ -1,5 +1,5 @@
-const {copia, inverso} = require('../src/index')
-
+ const {copia, inverso,somarVetores, intercalarElementos} = require('../src/index')
+/*
 describe('função copia', () =>{
 
     test('Retorna a=b', () =>{
@@ -33,9 +33,9 @@ describe('função copia', () =>{
     });
 
 
-})
-
-describe('função copia inverso', ()=>{
+}) */
+//---------------------------------------------------
+/* describe('função copia inverso', ()=>{
     test('Retorna a= inverso de b', () =>{
         const result = inverso([1, 2, 3], []);
         expect(result).toStrictEqual([3,2,1]);
@@ -66,4 +66,84 @@ describe('função copia inverso', ()=>{
         expect(result).toStrictEqual([99, 88, 10, 3, 2, 1]);
     }); 
 
-})
+}) */
+
+//----------------------------------------------------------------
+/* describe('função somarVetores', () => {
+
+    test('Soma dois vetores de mesmo tamanho', () => {
+        const result = somarVetores([1, 2, 3], [4, 5, 6]);
+        expect(result).toStrictEqual([5, 7, 9]);
+    });
+
+    test('Soma dois vetores de tamanhos diferentes', () => {
+        const result = somarVetores([1, 2], [4, 5, 6]);
+        expect(result).toStrictEqual([5, 7, 6]);
+    });
+
+    test('Soma quando um vetor é vazio', () => {
+        const result = somarVetores([], [4, 5, 6]);
+        expect(result).toStrictEqual([4, 5, 6]);
+    });
+
+    test('Soma com elementos nulos ou indefinidos', () => {
+        const result = somarVetores([null, 2, undefined], [4, null, 6]);
+        expect(result).toStrictEqual([4, 2, 6]);
+    });
+
+    test('Soma com elementos negativos', () => {
+        const result = somarVetores([-1, -2, -3], [1, 2, 3]);
+        expect(result).toStrictEqual([0, 0, 0]);
+    });
+
+    test('Soma de vetores multidimensionais', () => {
+        const result = somarVetores([[1, 2], [3, 4]], [[5, 6], [7, 8]]);
+        expect(result).toStrictEqual([[6, 8], [10, 12]]);
+    });
+
+    test('Soma de vetores multidimensionais com tamanhos diferentes', () => {
+        const result = somarVetores([[1, 2], [3, 4]], [[5, 6]]);
+        expect(result).toStrictEqual([[6, 8], [3, 4]]);
+    });
+
+}); */
+
+//-------------------------------------------------------------------
+describe('função intercalarElementos', () => {
+
+    test('Intercala dois vetores de mesmo tamanho', () => {
+        const result = intercalarElementos([1, 2, 3], [4, 5, 6]);
+        expect(result).toStrictEqual([1, 4, 2, 5, 3, 6]);
+    });
+
+    test('Intercala dois vetores de tamanhos diferentes', () => {
+        const result = intercalarElementos([1, 2], [4, 5, 6]);
+        expect(result).toStrictEqual([1, 4, 2, 5, 6]);
+    });
+
+    test('Intercala quando um vetor é vazio', () => {
+        const result = intercalarElementos([], [4, 5, 6]);
+        expect(result).toStrictEqual([4, 5, 6]);
+    });
+
+    test('Intercala com elementos nulos ou indefinidos', () => {
+        const result = intercalarElementos([null, 2, undefined], [4, null, 6]);
+        expect(result).toStrictEqual([null, 4, 2, null, undefined, 6]);
+    });
+
+    test('Intercala com elementos negativos', () => {
+        const result = intercalarElementos([-1, -2, -3], [1, 2, 3]);
+        expect(result).toStrictEqual([-1, 1, -2, 2, -3, 3]);
+    });
+
+    test('Intercalação de vetores multidimensionais', () => {
+        const result = intercalarElementos([[1, 2], [3, 4]], [[5, 6], [7, 8]]);
+        expect(result).toStrictEqual([[1, 2], [5, 6], [3, 4], [7, 8]]);
+    });
+
+    test('Intercalação de vetores multidimensionais com tamanhos diferentes', () => {
+        const result = intercalarElementos([[1, 2]], [[5, 6], [7, 8]]);
+        expect(result).toStrictEqual([[1, 2], [5, 6], [7, 8]]);
+    });
+
+});

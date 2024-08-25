@@ -16,3 +16,19 @@
 + A possui vários tipos de elemento
 + A possui um array dentro
 + B possui parámetro prévios
+
+
+## Somar Vetores
++ Vetores de mesmo tamanho somados corretamente
++ Vetores de tamanhos diferentes
++ Um vetor é vazio
++ Elementos nulos ou indefinidos presentes
++ Vetores com elementos negativos
+
+
+## Intercalar Elementos
++ Vetores de mesmo tamanho intercalados corretamente
++ Vetores de tamanhos diferentes
++ Um vetor é vazio
++ Elementos nulos ou indefinidos presentes
++ Vetores com elementos negativos
